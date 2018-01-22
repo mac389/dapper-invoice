@@ -3,14 +3,14 @@
 %\documentclass[letterpaper,currency=euro]{dapper-invoice}
 %\documentclass[letterpaper,currency=pound]{dapper-invoice}
 
-\newcommand{\invoiceNo}{101}
-\newcommand{\balance}{137.50}
-\newcommand{\duein}{15}% days
+\newcommand{\invoiceNo}{1}
+\newcommand{\balance}{9750}
+\newcommand{\duein}{30}% days
 
-\newcommand{\me}{Your~Name}
-\newcommand{\clientName}{Sample~Client}
+\newcommand{\me}{Michael Chary}
+\newcommand{\clientName}{Bionest Partners}
 
-\setmetadata{\me}{Your Biz}{\invoiceNo}{\clientName}
+\setmetadata{\me}{}{\invoiceNo}{\clientName}
 
 \defaultfontfeatures{ Path = ./Fonts/ }
 \usepackage{fontawesome}
@@ -18,16 +18,17 @@
 \begin{document}
 
 \newfontface\mainLightItalic{OpenSans-LightItalic}
-\makeheader{Your\ \mainLightItalic Biz}{\invoiceNo}
+\makeheader{Michael Chary}{\invoiceNo}
 
 \twocolumnlayout{
     \begin{infoSection}
         \infoBox{Client}{\clientName \\
-                         123 Street Address \\
-                         City, State 55555 }
-        \infoBox{Project}{\#123.456}
-        \infoBox{Contact}{Jane Smith}
-        \infoSub{\faMobilePhone}{\small\slshape +1~(555)~555-5555}
+				380 Lexington Avenue
+				Suite 1514
+				New York, NY 10168}
+        \infoBox{Project}{Automated Analysis of Key Opinion Leaders in Oncology}
+        \infoBox{Contact}{Melinda Kutzing}
+        \infoSub{\faMobilePhone}{\small\slshape +1~(212)~612-3030}
         \noalign{\addvspace{8ex}}
         \infoBox{}{
             {\large\raisebox{.55\height}\currencysym\huge\formatcurrency{\balance} \arrowbase} \\
@@ -38,11 +39,11 @@
     \begin{infoSection}
         \infoBox{\arrowtarget Payable To}{
             \me \\
-            1234 Sycamore Ave \\
-            Blacksburg, VA 24060
+           Routing No. 021000021\\
+	Account No.  633002768465\           
         }
-        \infoSub{\faMobilePhone}{\small\slshape +1~(555)~555-5555}
-        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{you@example.com}}
+        \infoSub{\faMobilePhone}{\small\slshape +1~(646)~765-4782}
+        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{mac389@gmail.com}}
     \end{infoSection}
 }
 
@@ -52,20 +53,14 @@
 
 \begin{hoursItemizationWithProject}
 
-    \lineitemp{2015/4/11}{2}{50}{Invoice}{
-        \item Discussed requirements with client}
-
-    \lineitemp{2015/4/11}{1.25}{50}{Invoice}{
-        \item Wrote Invoice in LaTeX}
-
-    \lineitemp{2015/4/11}{0.5}{50}{Invoice}{
-        \item Packaged Invoice in .cls file}
+    \lineitemp{2018/1/1}{1}{9750}{-}{
+        \item[] Natural Language Processing to Characterize Key\\Opinion Leaders}
 
     \beginsummary
 
     \summaryline{Total}{\currencysym\formatcurrency{\InvoiceTotal}}
 
-    \summaryline{Paid}{\currencysym\formatcurrency{50}}
+    \summaryline{Paid}{\currencysym\formatcurrency{0}}
     \summaryline{Balance Due}{\currencysym\formatcurrency{\balance}} % not really any math support (yet)
 
 \end{hoursItemizationWithProject}
