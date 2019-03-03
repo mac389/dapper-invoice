@@ -1,0 +1,104 @@
+\documentclass[letterpaper]{dapper-invoice}
+%\documentclass[letterpaper,currency=dollar]{dapper-invoice}
+%\documentclass[letterpaper,currency=euro]{dapper-invoice}
+%\documentclass[letterpaper,currency=pound]{dapper-invoice}
+
+\newcommand{\invoiceNo}{2}
+\newcommand{\balance}{0}
+\newcommand{\duein}{30}% days
+
+\newcommand{\me}{Michael Chary}
+\newcommand{\clientName}{NewYork Presbyterian\textbackslash Queens}
+
+\setmetadata{\me}{}{\invoiceNo}{\clientName}
+
+\defaultfontfeatures{ Path = ./Fonts/ }
+\usepackage{fontawesome}
+
+\begin{document}
+
+\newfontface\mainLightItalic{OpenSans-LightItalic}
+\makeheader{Michael Chary}{\invoiceNo}
+
+\twocolumnlayout{
+    \begin{infoSection}
+        \infoBox{Client}{\clientName \\
+				56-44 Main St. 
+				Flushing, NY 11355}
+        \infoBox{Project}{Research Consultant}
+        \infoBox{Contact}{Melinda Kutzing}
+        \infoSub{\faMobilePhone}{\small\slshape +1~(212)~612-3030}
+        \noalign{\addvspace{8ex}}
+        \infoBox{}{
+            {\large\raisebox{.55\height}\currencysym\huge\formatcurrency{\balance} \arrowbase} \\
+            {\small\color{subduedColor} due \duedate{\duein}}
+        }
+    \end{infoSection}
+}{
+    \begin{infoSection}
+        \infoBox{\arrowtarget Payable To}{
+            \me \\
+          403 Union Avenue\\
+	Peekskill, NY 10566\\
+	\phantom{} \\
+           Routing No. 021000021\\
+	Account No.  633002768465\           
+        }
+        \infoSub{\faMobilePhone}{\small\slshape +1~(646)~765-4782}
+        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{mac389@gmail.com}}
+    \end{infoSection}
+}{
+    \begin{infoSection}
+        \infoBox{\arrowtarget Payable To}{
+            \me \\
+          403 Union Avenue\\
+	Peekskill, NY 10566\\
+	\phantom{} \\
+           Routing No. 021000021\\
+	Account No.  633002768465\           
+        }
+        \infoSub{\faMobilePhone}{\small\slshape +1~(646)~765-4782}
+        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{mac389@gmail.com}}
+    \end{infoSection}
+}
+
+\drawarrow
+
+\addvspace{4ex}
+
+\begin{hoursItemizationWithProject}
+
+    \lineitemp{October 1}{6}{152}{ACEP}{
+        \item[] Flight to ACEP}
+        
+      \lineitemp{October 3}{2}{152}{ACEP}{
+        \item[] Oral Presentation of Abstracts}
+
+    \lineitemp{October 4}{6}{152}{ACEP}{
+        \item[] Flight to ACEP}  
+
+   \lineitemp{October 11}{2}{152}{Mitchell}{\item[] Discuss allocation of Mitchell`s time \& effort}
+
+    \lineitemp{October 12}{2}{152}{Zuhair}{\item[] Watch Harvard Global Scholars Example lecture\\ determine time \& effort needed.}
+
+    \lineitemp{October 13}{0.5}{152}{Alcohol project}{\item[] Discuss deisgn of EtOH withdrawal project with Dr. Parikh.}
+    
+     \lineitemp{October 16}{2}{152}{Zuhair}{\item[] Review t-test, ANOVA PPT.}
+
+    \lineitemp{October 17}{1}{152}{Gen}{\item[] Call into Research Meeting}
+
+    \lineitemp{October 17}{2}{152}{Mitchell}{\item[] Edit specific aims for\\ cultural differences in opioids proj.}
+    
+     \lineitemp{October 19}{2}{152}{Semion}{\item[] Edit IRB application, specific aims for\\ Trauma Delta, PXR project}
+
+    \beginsummary
+
+    \summaryline{Total}{\currencysym\formatcurrency{\InvoiceTotal}}
+
+    \summaryline{Paid}{\currencysym\formatcurrency{0}}
+    \summaryline{Balance Due}{\currencysym\formatcurrency{\balance}} % not really any math support (yet)
+
+\end{hoursItemizationWithProject}
+
+\end{document}
+s

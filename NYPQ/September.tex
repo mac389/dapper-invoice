@@ -1,0 +1,105 @@
+\documentclass[letterpaper]{dapper-invoice}
+%\documentclass[letterpaper,currency=dollar]{dapper-invoice}
+%\documentclass[letterpaper,currency=euro]{dapper-invoice}
+%\documentclass[letterpaper,currency=pound]{dapper-invoice}
+
+\newcommand{\invoiceNo}{2}
+\newcommand{\balance}{0}
+\newcommand{\duein}{30}% days
+
+\newcommand{\me}{Michael Chary}
+\newcommand{\clientName}{NewYork Presbyterian\textbackslash Queens}
+
+\setmetadata{\me}{}{\invoiceNo}{\clientName}
+
+\defaultfontfeatures{ Path = ./Fonts/ }
+\usepackage{fontawesome}
+
+\begin{document}
+
+\newfontface\mainLightItalic{OpenSans-LightItalic}
+\makeheader{Michael Chary}{\invoiceNo}
+
+\twocolumnlayout{
+    \begin{infoSection}
+        \infoBox{Client}{\clientName \\
+				56-44 Main St. 
+				Flushing, NY 11355}
+        \infoBox{Project}{Automated Analysis of Key Opinion Leaders in Oncology}
+        \infoBox{Contact}{Melinda Kutzing}
+        \infoSub{\faMobilePhone}{\small\slshape +1~(212)~612-3030}
+        \noalign{\addvspace{8ex}}
+        \infoBox{}{
+            {\large\raisebox{.55\height}\currencysym\huge\formatcurrency{\balance} \arrowbase} \\
+            {\small\color{subduedColor} due \duedate{\duein}}
+        }
+    \end{infoSection}
+}{
+    \begin{infoSection}
+        \infoBox{\arrowtarget Payable To}{
+            \me \\
+          403 Union Avenue\\
+	Peekskill, NY 10566\\
+	\phantom{} \\
+           Routing No. 021000021\\
+	Account No.  633002768465\           
+        }
+        \infoSub{\faMobilePhone}{\small\slshape +1~(646)~765-4782}
+        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{mac389@gmail.com}}
+    \end{infoSection}
+}{
+    \begin{infoSection}
+        \infoBox{\arrowtarget Payable To}{
+            \me \\
+          403 Union Avenue\\
+	Peekskill, NY 10566\\
+	\phantom{} \\
+           Routing No. 021000021\\
+	Account No.  633002768465\           
+        }
+        \infoSub{\faMobilePhone}{\small\slshape +1~(646)~765-4782}
+        \infoSub{\tiny\faEnvelope}{\small\slshape \emaillink{mac389@gmail.com}}
+    \end{infoSection}
+}
+
+\drawarrow
+
+\addvspace{4ex}
+
+\begin{hoursItemizationWithProject}
+
+    \lineitemp{September 4}{1}{152}{MCI}{
+        \item[] Discussion with Luke Fey\\Develope More Explicit Criteria for Subgroup Analysis}
+
+    \lineitemp{September 18}{1}{152}{MCI}{
+        \item[] Discussion with Muhammad Yousaf\\Specific Aims for Identifying\\ High-Mortality ICU Populations with ED Procalcitonin}
+
+    \lineitemp{September 19}{2}{152}{MCI, $\Delta$}{
+        \item[] Discussion with Surgery\\Acess for LeBaron and Torres' Studies}
+
+    \lineitemp{September 22}{0.5}{152}{MCI}{
+        \item[] Discussion with Stein\\ Strategy for redoing or expanding study}
+    
+    \lineitemp{September 24}{1}{152}{Gen}{
+        \item[] Update Web site description\\ Identify candidates for grants \& scholarships}
+            
+    \lineitemp{September 25}{2}{152}{Gen}{
+        \item[] E-mail correspondance (1) Continue Vit C. Project\\ Identify candidates for grants \& scholarships}
+            
+    \lineitemp{September 27}{0.5}{152}{Gen}{
+        \item[] Discuss Mitchell, Website with Parikh}
+
+    \lineitemp{September 28}{1}{152}{Gen}{
+        \item[] Discuss Submitting to MSSNY,\\  CBD, volunteer, and procalcitonin projs.}            
+
+
+    \beginsummary
+
+    \summaryline{Total}{\currencysym\formatcurrency{\InvoiceTotal}}
+
+    \summaryline{Paid}{\currencysym\formatcurrency{0}}
+    \summaryline{Balance Due}{\currencysym\formatcurrency{\balance}} % not really any math support (yet)
+
+\end{hoursItemizationWithProject}
+
+\end{document}

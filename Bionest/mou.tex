@@ -1,0 +1,78 @@
+%\title{Overleaf Memo Template}
+% Using the texMemo package by Rob Oakes
+\documentclass[a4paper,11pt]{texMemo}
+\usepackage[english]{babel}
+\usepackage{graphicx, lipsum}
+\usepackage{tabto,ulem,booktabs}
+\usepackage{textcomp}
+
+\def\dashsign{\xleaders\hbox to .5em{\_}\hfill\_} 
+%% Edit the header section here. To include your
+%% own logo, upload a file via the files menu.
+\memoto{Melinda Kutzing, PhD}
+\memofrom{Michael Chary, MD PhD}
+\memosubject{Technical Support for \emph{Dromedary}}
+\memodate{August 5, 2018}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\cfoot{\thepage\ of \pageref{LastPage}}
+\begin{document}
+\maketitle
+
+\section*{Scope of Understanding}
+  This is a memorandum of understanding that Michael Chary will provide the following technical support services to BIONEST Partners from now until December 31, 2018:
+  
+  \begin{itemize}
+	\item Debugging \emph{Dromedary} code that does not work ``out of the box'' when applied to a new disease space
+    \item Adapting \emph{Dromedary} to produce intended output on new disease spaces. 
+  \end{itemize}
+  
+  Both parties understand that the term \emph{Dromedary} refers to code developed at Bionest by Michael Chary between August 2017 and August 2018.  
+  
+   The term \emph{intended output} refers to:
+   \begin{enumerate}
+     \item A list of key opinion leaders in a disease space. The name of each key opinion leader is accompanied by a numerical weight found by \emph{Dromedary}'s natural language processing algorithms. 
+     \item A graphic in PNG format describing the connections between a key opinion leader as identified in (1) and any number of other key opinion leaders identified in (1). \emph{Dromedary} scales the connections between two key opinion leaders according to how many times those two key opinion leaders published with each other. 
+     \item A word cloud in PNG format that displays words that describe a key opinion leader's work. The words are identified by \emph{Dromedary}'s natural language processing algorithms
+    \end{enumerate}
+
+\section*{Process}
+   BIONEST Partners will notify of Michael Chary of a technical support request via GitHub. Michael Chary has shown BIONEST Partners Employee Antoine Brion how to submit a request on GitHub. If Mr. Brion is no longer with BIONEST Partner when technical support is desires, BIONEST Partners can notify Michael Chary via e-mail. Michael Chary will then open a request on GitHub and instruct the point of contact at BIONEST Partners how to discuss the technical aspects of the request via GitHub.
+   Michael Chary will be expected to respond to all requests within four (4) business days unless absent extenuating circumstances or prior notification to the contrary. The timeline for completing the request will depend on the nature of the request. 
+
+\section*{Terms}
+  This technical support shall be provided until December 31, 2018 unless:
+  \begin{itemize}
+  	\item The code has been more than superficially altered. For this memo we consider code to have been more than superficially altered if Michael Chary cannot join his branch of the GitHub repository using GitHub's automatic merge feature. 
+    \item New features are requested. New features refer to any output that is not the intended output described above. New features also refers to additional processing capabilities. Additional processing capabilities refers to processing capabilities not present in the GitHub repository \emph{CLL-production} as of August 1, 2018. 
+  \end{itemize}
+  
+  BIONEST Partners may formally re-engage Michael Chary if the code has been substantially altered or new features are requested. BIONEST Partners may formally re-engage Michael Chary if technical support is desired after December 31, 2018. 
+
+ It is understood that Michael Chary will retain a copy of \emph{Dromedary} code as it stands on August 1, 2018 until December 31, 2018 to provide the ongoing technical support this memo describes. 
+
+\section*{Compensation}
+	If Michael Chary determines that 5 or fewer hours are needed to fulfill a specific request, he will provide the service at no cost to BIONEST Partner. 
+    
+    If Michael Chary determines that 5-10 hours are needed, he will charge a rate of \$75 per hour. 
+    
+    If Michael Chary determines that more than 10 hours are needed to fulfill a specific request, or if, during the course of providing this technical support, Michael Chary finds that substantially more effort is needed than anticipated, BIONEST Partners and he will discuss whether a formal re-engagement is warranted. 
+    
+\section*{Intellectual Property}
+   Michael Chary reaffirms under Schedule C Section 2 of his agreement with BIONEST Partners (signed August 22, 2018) that additional code generated during any technical support is ``work for hire'' and BIONEST Partners is the legal author. 
+   
+   BIONEST Partners affirms that it holds no claim to any intellectual property that Michael Chary develops after his initial engagement with BIONEST Partners that he brings to bear on any future requests by BIONEST Partners for technical support. Michael Chary's initial engagement with BIONEST Partners ended August 2, 2018. 
+
+\vspace{3\baselineskip}% only  you type something below
+\hrulefill
+\hspace*{0mm}\vbox to 0pt{\uline{\hspace{.5\linewidth}}\\[3pt]
+\phantom{thi} Michael Chary, MD PhD}%
+
+\vspace{3\baselineskip}% only  you type something below
+\hrulefill
+\hspace*{0mm}\vbox to 0pt{\uline{\hspace{.5\linewidth}}\\[3pt]
+\phantom{thi} Melinda Kutzing, PhD\\
+\phantom{thi} Managing Partner, BIONEST Partners}%
+
+\end{document}
