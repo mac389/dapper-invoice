@@ -3,3 +3,4 @@
 *.out
 *.pdf
 .vagrant/
+.DS_Store
